@@ -32,11 +32,12 @@ jobs:
             google-chrome --version
             chromedriver --version
           name: Check install
-            
+      - run: /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --version     
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
-workflows:
+ 
+ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
