@@ -24,7 +24,7 @@ jobs:
       #- run: sudo apt
       - run:
           name: ping test
-          command: "ping google.com"
+          command: "ping google.com &> /dev/null" 
 
   test:
     macos:
