@@ -2,8 +2,7 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
-orbs: 
-  browser-tools: circleci/browser-tools@1.4.0
+
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
@@ -12,8 +11,8 @@ jobs:
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
-      - image: cimg/android:2022.09
-    resource_class: medium
+      - image: cimg/android:2022.09-ndk
+    resource_class: large
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
@@ -21,22 +20,12 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-      #- run: sudo apt
       - run:
           name: ping test
           command: ping google.com &> /dev/null || true
           no_output_timeout: 30s
 
-  test:
-    macos:
-      xcode: 13.3 
-    # resource_class: macos.x86.medium.gen2
-    steps:
-      - browser-tools/install-chrome
-      - browser-tools/install-chromedriver
-      - run:
-          command: /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --version 
-          name: Check install
+  
             
 
 # Invoke jobs via workflows
@@ -45,4 +34,4 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
-     # - test
+     
