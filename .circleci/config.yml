@@ -16,5 +16,5 @@ jobs:
           shell: powershell.exe
           command: |
             docker info
-            docker run rancher/windows_exporter-package
+            docker run python:slim
 
