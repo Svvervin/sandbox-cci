@@ -16,4 +16,5 @@ jobs:
           shell: powershell.exe
           command: |
             docker info
-            docker run hello-world:nanoserver-1809
+            docker run rancher/windows_exporter-package
+
