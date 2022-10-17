@@ -16,6 +16,6 @@ jobs:
           shell: powershell.exe
           command: |
             docker info
-            docker pull python:slim
-            docker run python:slim
+            docker pull python
+            docker run python
 
