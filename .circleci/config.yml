@@ -1,13 +1,12 @@
 version: 2.1
 
-orbs:
-  win: circleci/windows@4.1.1
-
 jobs:
   build:
-    executor:
-      name: win/default
-      shell: powershell.exe
+    machine:
+      image: 'windows-server-2022-gui:current'
+      resource_class: windows.medium
+      shell: powershell.exe -ExecutionPolicy Bypass
+      
     steps:
       - checkout
       - run: systeminfo
