@@ -16,6 +16,7 @@ jobs:
           shell: powershell.exe
           command: |
             docker info
-            docker pull docker/surprise
-            docker run docker/surprise
+            docker pull traefik
+            docker run traefik
+            
 
