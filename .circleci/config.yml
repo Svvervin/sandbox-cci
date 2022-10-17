@@ -16,7 +16,7 @@ jobs:
           shell: powershell.exe
           command: |
             docker info
-            docker pull docker.io/strategicdevops/2019_build_erlang:latest
-            docker run docker.io/strategicdevops/2019_build_erlang:latest
+            docker pull public.ecr.aws/docker/library/hello-world:nanoserver-ltsc2022
+            docker run public.ecr.aws/docker/library/hello-world:nanoserver-ltsc2022
             
 
