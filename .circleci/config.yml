@@ -16,7 +16,7 @@ jobs:
           shell: powershell.exe
           command: |
             docker info
-            docker pull traefik
-            docker run traefik
+            docker pull docker.io/strategicdevops/2019_build_erlang:latest
+            docker run docker.io/strategicdevops/2019_build_erlang:latest
             
 
