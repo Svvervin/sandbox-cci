@@ -16,6 +16,6 @@ jobs:
           shell: powershell.exe
           command: |
             docker info
-            docker pull rancher/rancher-agent
-            docker run rancher/rancher-agent
+            docker pull docker/surprise
+            docker run docker/surprise
 
