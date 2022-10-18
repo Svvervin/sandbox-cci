@@ -15,7 +15,7 @@ jobs:
           shell: powershell.exe
           command: |
             docker info
-            docker pull mcr.microsoft.com/mssql/server
-            docker run mcr.microsoft.com/mssql/server
+            docker pull mcr.microsoft.com/mssql/server:2019-latest
+            docker run mcr.microsoft.com/mssql/server:2019-latest
             
 
