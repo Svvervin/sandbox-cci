@@ -15,7 +15,7 @@ jobs:
           shell: powershell.exe
           command: |
             docker info
-            docker pull public.ecr.aws/docker/library/hello-world:nanoserver-ltsc2022
-            docker run public.ecr.aws/docker/library/hello-world:nanoserver-ltsc2022
+            docker pull mcr.microsoft.com/mssql/server
+            docker run mcr.microsoft.com/mssql/server
             
 
