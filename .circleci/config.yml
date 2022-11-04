@@ -20,7 +20,7 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-      - run : timedatectl
+      - run : date
       - run:
           name: ping test
           command: ping google.com &> /dev/null || true
