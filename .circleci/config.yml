@@ -5,7 +5,7 @@ jobs:
     machine:
       image: ubuntu-2204:2022.10.1
     steps:
-      - run: whoami
+      - run: docker run singledigital/awx-ee:4.x whoami
 
 workflows:
   docker-who:
