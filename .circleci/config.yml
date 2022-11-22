@@ -4,7 +4,7 @@ jobs:
   build:
     docker:
       - image: singledigital/awx-ee@sha256:88837c34f9757f92224c61d258760a4021baebb37e0dcc275bf043e703eb9d47 #singledigital/awx-ee:4.x
-        #user: adm
+        user: root
     steps:
       - checkout
       - run: cat /etc/passwd
