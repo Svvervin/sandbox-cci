@@ -6,7 +6,8 @@ jobs:
   build:
     macos:
       xcode: 14.1.0
-
+    resource_class: large
+    
     steps:
       # Commands will execute in macOS container
       # with Xcode 12.5.1 installed
