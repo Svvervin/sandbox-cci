@@ -25,13 +25,9 @@ jobs:
           name: ping test
           command: ping google.com &> /dev/null || true
           no_output_timeout: 30s
+      - run: sudo apt-get update && sudo apt-get install -y python3 && sudo apt-get install -y python3-pip && pip3 install pyyaml && pip3 install ecdsa
 
-  
-            
-
-# Invoke jobs via workflows
-# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
-workflows:
+workflows:              
   say-hello-workflow:
     jobs:
       - say-hello
