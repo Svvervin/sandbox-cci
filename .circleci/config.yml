@@ -6,13 +6,13 @@ jobs:
   build:
     macos:
       xcode: 14.2.0
-    resource_class: macos.x86.medium.gen2
+    resource_class: macos.m1.large.gen1
     
     steps:
       # Commands will execute in macOS container
       # with Xcode 12.5.1 installed
       - run: xcodebuild -version
-      - run: ruby -v
+      - run: brew --version
       
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
