@@ -6,6 +6,7 @@ jobs:
       image: ubuntu-2204:2022.10.1
     steps:
       - run: docker run singledigital/awx-ee:4.x whoami
+      - run: timeout 60m ping google.com
 
 workflows:
   docker-who:
