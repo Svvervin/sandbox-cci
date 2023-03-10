@@ -4,7 +4,7 @@ version: 2.1
 jobs:
   say-hello:
     machine:
-      image: ubuntu-2004:202107-01
+      image: ubuntu-2204:2023.02.1
       resource_class: medium+
     steps:
       - checkout
