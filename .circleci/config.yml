@@ -5,15 +5,13 @@ jobs:
   say-hello:
     machine:
       image: ubuntu-2204:2023.02.1
-      resource_class: medium+
+      resource_class: small
     steps:
       - checkout
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-      - run: java -version
-      - run: sudo apt install openjdk-19-jdk
-  
+
  
 workflows:
   say-hello-workflow:
