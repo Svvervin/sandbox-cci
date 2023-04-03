@@ -4,7 +4,7 @@ version: 2.1
 jobs:
   say-hello:
     docker:
-      - image: cimg/node
+      - image: cimg/node:lts
     steps:
       - checkout
       - run:
