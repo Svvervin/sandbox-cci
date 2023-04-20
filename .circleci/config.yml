@@ -16,7 +16,6 @@ jobs:
     
     steps:
       - checkout
-      - cli/install
       - run: circleci version
       
 workflows:
