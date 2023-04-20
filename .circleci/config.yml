@@ -6,6 +6,9 @@ orbs:
 jobs:
   orb-publish:
     executor: cli/default
+      parameters:
+        tag: 0.1.23845
+    
     steps:
       - checkout
       - cli/install
