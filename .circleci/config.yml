@@ -3,11 +3,16 @@ version: 2.1
 orbs:
   cli: circleci/circleci-cli@0.1.9
 
+executors:
+    default:
+        description: |
+            The circleci-cli Docker image, which includes the CircleCI CLI
+        docker:
+            - image: circleci/circleci-cli:0.1.23845
+
 jobs:
   orb-publish:
     executor: cli/default
-      parameters:
-        tag: 0.1.23845
     
     steps:
       - checkout
