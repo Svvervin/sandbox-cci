@@ -11,7 +11,7 @@ jobs:
       - cli/install
       - run: circleci version
       
- workflows:
+workflows:
   main:
     jobs:
       - orb-publish
