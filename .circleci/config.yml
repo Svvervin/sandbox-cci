@@ -12,11 +12,10 @@ executors:
 
 jobs:
   orb-publish:
-    executor: default
+    executor: cli/default
     
     steps:
       - checkout
-      - cli/install
       - run: circleci version
       
 workflows:
