@@ -15,7 +15,7 @@ jobs:
       - run: brew --version
       - run: pod --version 
       - run: |
-          rbenv install 3.0.5 -y
+          rbenv install 3.0.5 --y
           sudo gem update --system
       
 # Invoke jobs via workflows
