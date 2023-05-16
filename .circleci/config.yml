@@ -14,6 +14,9 @@ jobs:
       - run: xcodebuild -version
       - run: brew --version
       - run: pod --version 
+      - run: |
+          rbenv install 3.0.5 -y
+          sudo gem update --system
       
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
