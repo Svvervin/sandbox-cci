@@ -14,7 +14,7 @@ jobs:
       - run: xcodebuild -version
       - run: brew --version
       - run: pod --version 
-      - restore_cache
+      - restore_cache:
           keys:
             - brewNappium
       - run: brew install maven
