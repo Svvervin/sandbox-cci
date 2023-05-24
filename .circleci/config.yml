@@ -19,7 +19,7 @@ jobs:
             - brewNappium
       - run: brew install maven
       - run: npm install -g appium@next
-      - save-cache:
+      - save_cache:
           key: brewNappium
           paths:
             - /opt/homebrew/Cellar
