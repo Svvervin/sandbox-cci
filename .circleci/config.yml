@@ -26,7 +26,7 @@ jobs:
             - /usr/local/lib/node_modules/appium/node_modules/
       
       
-# Invoke jobs via workflows
+# Invoke jobs via workflows t
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
  
 workflows:
