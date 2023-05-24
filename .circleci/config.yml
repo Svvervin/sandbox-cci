@@ -14,8 +14,16 @@ jobs:
       - run: xcodebuild -version
       - run: brew --version
       - run: pod --version 
+      - restore_cache
+          keys:
+            - brewNappium
       - run: brew install maven
       - run: npm install -g appium@next
+      - save-cache:
+          key: brewNappium
+          paths:
+            - /opt/homebrew/Cellar
+            - /usr/local/lib/node_modules/appium/node_modules/
       
       
 # Invoke jobs via workflows
