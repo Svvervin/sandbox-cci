@@ -17,3 +17,6 @@ jobs:
         - run:
             command: echo $sshdir
             shell: bash.exe
+        - run:
+            command: echo echo ${CIRCLE_WORKING_DIRECTORY::-8}
+            shell: bash.exe
