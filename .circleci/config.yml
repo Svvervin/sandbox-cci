@@ -10,7 +10,10 @@ jobs:
       # Commands are run in a Windows virtual machine environment
         - checkout
         - run: Write-Host 'Hello, Windows'
-        - run: setx $CIRCLE_WORKINNG_DIRECTORY "$($CIRCLE_WORKING_DIRECTORY | 's/project//')" /M 
+       # - run: setx $CIRCLE_WORKINNG_DIRECTORY "$($CIRCLE_WORKING_DIRECTORY | 's/project//')" /M 
+        - run:
+            command: sshdir=${CIRCLE_WORKING_DIRECTORY::-8}
+            shell: bash.exe
         - run:
             command: echo $sshdir
             shell: bash.exe
