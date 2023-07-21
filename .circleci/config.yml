@@ -10,7 +10,7 @@ jobs:
     # See: https://circleci.com/docs/configuration-reference/#executor-job
    resource_class: 'windows.medium'
    machine:
-      image: 'windows-server-2022-gui:2023.05.1'
+      image: 'windows-server-2022-gui:2023.07.1'
       shell: 'powershell.exe -ExecutionPolicy Bypass'
    steps:
       # Commands are run in a Windows virtual machine environment
