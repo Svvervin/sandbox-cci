@@ -10,3 +10,8 @@ jobs:
     steps:
       - run: uname -a
       - run: echo "Hello, Arm!"
+
+workflows:
+   my-workflow:
+    jobs:
+      - my-job
