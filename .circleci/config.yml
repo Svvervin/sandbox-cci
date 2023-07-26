@@ -4,8 +4,8 @@ version: 2.1
 
 jobs:
   my-job:
-    machine:
-      image: ubuntu-2204:2023.07.2
+    docker:
+      image: cimg/base
     resource_class: medium
     steps:
       - run: uname -a
