@@ -6,7 +6,7 @@ jobs:
   my-job:
     machine:
       image: ubuntu-2204:2023.07.2
-    resource_class: medium
+    resource_class: arm.medium
     steps:
       - run: uname -a
       - run: echo "Hello, Arm!"
