@@ -8,11 +8,9 @@ jobs:
   say-hello:
     # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/configuration-reference/#executor-job
+    resource_class: arm.large
     docker:
-      - image: alpine:latest
-    resource_class: arm.medium
-    # Add steps to the job
-    # See: https://circleci.com/docs/configuration-reference/#steps
+      - image: cimg/openjdk:11.0.20
     steps:
       - checkout
       - run:
