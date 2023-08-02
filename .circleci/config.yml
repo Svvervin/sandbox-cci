@@ -10,7 +10,7 @@ jobs:
     # See: https://circleci.com/docs/configuration-reference/#executor-job
     resource_class: arm.large
     docker:
-      - image: cimg/openjdk:11.0.20
+      - image: cimg/base:2023.06
     steps:
       - checkout
       - run:
