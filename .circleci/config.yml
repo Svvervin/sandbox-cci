@@ -5,8 +5,8 @@ version: 2.1
 jobs:
   my-job:
     docker:
-      image: cimg/base
-    resource_class: medium
+      image: alpine:latest
+    resource_class: arm.medium
     steps:
       - run: uname -a
       - run: echo "Hello, Arm!"
