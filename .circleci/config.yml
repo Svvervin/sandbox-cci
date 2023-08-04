@@ -10,7 +10,7 @@ jobs:
     # See: https://circleci.com/docs/configuration-reference/#executor-job
     resource_class: arm.medium
     docker:
-      - image: transistorfm/ruby-node-ci
+      - image: ransistorfm/ruby-ci:3.2-node-arm64
     steps:
       - checkout
       - run:
