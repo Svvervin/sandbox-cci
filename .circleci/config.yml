@@ -8,9 +8,9 @@ jobs:
   say-hello:
     # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/configuration-reference/#executor-job
-    resource_class: arm.large
+    resource_class: arm.medium
     docker:
-      - image: cimg/base:2023.06
+      - image: transistorfm/ruby-node-ci
     steps:
       - checkout
       - run:
