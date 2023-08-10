@@ -10,10 +10,6 @@ jobs:
     steps:
       # Commands will execute in macOS container
       # with Xcode 12.5.1 installed
-      - run: xcodebuild -version
-      - run: brew --version
-      - run: pod --version 
-      - run: netstat
       - run: 
           name: cancel if latest build is good
           command: |
