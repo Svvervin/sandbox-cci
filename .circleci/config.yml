@@ -7,16 +7,16 @@ jobs:
     docker:
       - image: cimg/base:current
     steps:
-      # Commands will execute in macOS container
-      # with Xcode 12.5.1 installed
+      - run: jq --version
       - run: 
           name: cancel if latest build is good
           command: |
-            LATEST_STATUS=$(curl --url https://circleci.com/api/v1.1/project/github/CXEPI/devops-tools-scripts/tree/CO-23584\?filter\=failed --header "Circle-Token: $CIRCLE_TOKEN" | jq ".[0].status")
+            LATEST_STATUS=$(curl --url https://circleci.com/api/v1.1/project/github/CXEPI/devops-tools-scripts/tree/CO-23584\?filter\=failed --header "Circle-Token: $CIRCLE_TOKEN" | jq ".[0].status" | sed 's/"//g')
             if [ $LATEST_STATUS == "failed" ]; then
               echo "hi"
             else
               circleci-agent step halt
+              echo "failing"
             fi
       
       
