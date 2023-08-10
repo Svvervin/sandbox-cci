@@ -4,8 +4,7 @@ version: 2.1
   
 jobs:
   build:
-    macos:
-      xcode: "14.3.1"
+    machine: true
     resource_class: runner-egrapp/support-demo
     
     steps:
