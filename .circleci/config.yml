@@ -6,7 +6,6 @@ jobs:
   build:
     docker:
       - image: cimg/base:current
-    
     steps:
       # Commands will execute in macOS container
       # with Xcode 12.5.1 installed
