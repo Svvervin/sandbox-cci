@@ -13,10 +13,10 @@ jobs:
           command: |
             LATEST_STATUS=$(curl --url https://circleci.com/api/v1.1/project/github/CXEPI/devops-tools-scripts/tree/CO-23584\?filter\=failed --header "Circle-Token: $CIRCLE_TOKEN" | jq ".[0].status" | sed 's/"//g')
             if [ $LATEST_STATUS == "failed" ]; then
-              echo "hi"
-            else
               circleci-agent step halt
               echo "failing"
+            else
+              echo "hi"
             fi
       
       
