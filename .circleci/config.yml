@@ -5,7 +5,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/base:2023.08.1
+      - image: cimg/base
     
     steps:
       # Commands will execute in macOS container
@@ -18,7 +18,7 @@ jobs:
           name: cancel if latest build is good
           command: |
             LATEST_STATUS=$(curl --url https://circleci.com/api/v1.1/project/github/CXEPI/devops-tools-scripts/tree/CO-23584\?filter\=failed --header "Circle-Token: $CIRCLE_TOKEN" | jq ".[0].status")
-            if [ $LATEST_STATUS == "failed" ];
+            if [ $LATEST_STATUS == "failed" ]; then
               echo "hi"
             else
               circleci-agent step halt
