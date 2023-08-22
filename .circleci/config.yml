@@ -9,6 +9,7 @@ jobs:
       - image: << parameters.img >>
     steps:
       - run: sudo apt-get update
+      - run: sed -i 's/stable\/updates/stable-security\/updates/' /etc/apt/sources.list
       - run: echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list
 
 workflows:
