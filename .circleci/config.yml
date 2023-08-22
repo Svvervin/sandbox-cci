@@ -9,8 +9,8 @@ jobs:
       - image: << parameters.img >>
     steps:
      
-      - run: sed -i 's/stable\/updates/stable-security\/updates/' /etc/apt/sources.list
-      # - run: echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list
+      # - run: sed -i 's/stable\/updates/stable-security\/updates/' /etc/apt/sources.list
+      - run: echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list
       - run: sudo apt-get update
 
 workflows:
