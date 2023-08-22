@@ -10,7 +10,7 @@ jobs:
     steps:
      
       # - run: sed -i 's/stable\/updates/stable-security\/updates/' /etc/apt/sources.list
-      - run: echo "deb http://security.debian.org/debian-security bullseye-security main contrib non-free" > /etc/apt/sources.list
+      # - run: echo "deb http://security.debian.org/debian-security bullseye-security main contrib non-free" > /etc/apt/sources.list
       - run: sudo apt-get update
 
 workflows:
