@@ -21,5 +21,5 @@ workflows:
           matrix:
             parameters:
               img:
-                - notion/circleci:0.157
+                - notion/circleci@sha256:fa1d8345d43c6b7b413d88a8205797b376eeca32c4fe4e7ecff41aaeb5b3f17a
             
