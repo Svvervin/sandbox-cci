@@ -7,6 +7,7 @@ jobs:
         type: string
     docker:
       - image: << parameters.img >>
+        user: circleci
     steps:
      
       # - run: sed -i 's/stable\/updates/stable-security\/updates/' /etc/apt/sources.list
