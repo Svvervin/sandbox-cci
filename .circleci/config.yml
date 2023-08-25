@@ -20,5 +20,5 @@ workflows:
           matrix:
             parameters:
               img:
-                - circleci/node:14.8.0
-                - cimg/node:14.8.0
+                - notion/circleci:0.157
+            
