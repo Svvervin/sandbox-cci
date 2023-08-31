@@ -11,9 +11,7 @@ orbs:
 # See: https://circleci.com/docs/configuration-reference/#jobs
 jobs:
   say-hello:
-    # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/configuration-reference/#executor-job
-    machine:
+   machine:
       image: android:2021.10.1
    steps:
       # Commands are run in a Windows virtual machine environment
