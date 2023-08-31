@@ -12,13 +12,12 @@ orbs:
 jobs:
   say-hello:
    machine:
-      image: android:2023.07.1
+      image: android:2021.10.1
    steps:
       # Commands are run in a Windows virtual machine environment
         - checkout
-        - run: sudo apt update
         - browser-tools/install-chrome:
-            chrome-version: 114.0.5735.90
+            chrome-version: 116.0.5845.96
         - browser-tools/install-chromedriver
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
