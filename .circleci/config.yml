@@ -2,20 +2,23 @@
 # See: https://circleci.com/docs/configuration-reference
 version: 2.1
 
+orbs:
+  browser-tools: circleci/browser-tools@1.4.4
+
+
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
 jobs:
   say-hello:
     # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/configuration-reference/#executor-job
-   resource_class: 'windows.medium'
-   machine:
-      image: 'windows-server-2022-gui:2023.07.1'
-      shell: 'powershell.exe -ExecutionPolicy Bypass'
+   docker:
+      - image: cimg/ruby:3.0.2-browsers
    steps:
       # Commands are run in a Windows virtual machine environment
         - checkout
-        - run: Write-Host 'Hello, Windows'
+        - browser-tools/install-chrome:
+            chrome-version: 116.0.5845.96
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
 workflows:
