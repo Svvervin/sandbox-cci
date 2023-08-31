@@ -19,6 +19,7 @@ jobs:
         - checkout
         - browser-tools/install-chrome:
             chrome-version: 116.0.5845.96
+            replace-existing: true
         - browser-tools/install-chromedriver
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
