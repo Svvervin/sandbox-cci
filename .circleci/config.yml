@@ -13,7 +13,7 @@ jobs:
     # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/configuration-reference/#executor-job
    docker:
-      - image: cimg/ruby:3.0.6-browsers
+      - image: cimg/ruby:3.0.2-browsers
    steps:
       # Commands are run in a Windows virtual machine environment
         - checkout
