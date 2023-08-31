@@ -17,7 +17,7 @@ jobs:
    steps:
       # Commands are run in a Windows virtual machine environment
         - checkout
-        - run: apt-get update
+        - run: sudo apt-get update
         - browser-tools/install-chrome:
             chrome-version: 116.0.5845.96
             replace-existing: true
