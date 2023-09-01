@@ -13,7 +13,7 @@ jobs:
   build:
     macos:
       xcode: "14.2.0"
-    resource_class: m1.medium
+    resource_class: macos.m1.medium.gen1
    
     steps:
       # Commands are run in a Windows virtual machine environment
