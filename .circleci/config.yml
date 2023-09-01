@@ -18,7 +18,7 @@ jobs:
     steps:
       # Commands are run in a Windows virtual machine environment
         - checkout
-        - run: brew install sed
+        - run: brew install gnu-sed
         - run: brew install unzip
         - browser-tools/install-chrome:
             chrome-version: 116.0.5845.96
