@@ -10,10 +10,11 @@ orbs:
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
 jobs:
-  say-hello:
+  build:
     macos:
       xcode: "13.4.1"
     resource_class: macos.x86.medium.gen2
+   
    steps:
       # Commands are run in a Windows virtual machine environment
         - checkout
@@ -25,4 +26,4 @@ jobs:
 workflows:
   say-hello-workflow:
     jobs:
-      - say-hello
+      - build
