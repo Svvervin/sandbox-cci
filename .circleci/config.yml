@@ -3,7 +3,7 @@
 version: 2.1
   
 jobs:
-  build:
+  runnerjob:
     machine: true
     resource_class: runner-egrapp/support-demo
     
@@ -12,8 +12,15 @@ jobs:
       # with Xcode 12.5.1 installed
       - run: xcodebuild -version
       - run: brew --version
-      - run: pod --version 
       - run: netstat
+
+  cloudjob:
+    docker:
+      - image: cimg/base:2023.08
+
+    steps:
+        - run: docker ps
+
       
       
       
@@ -23,4 +30,5 @@ jobs:
 workflows:
   say-hello-workflow:
     jobs:
-      - build
+      - runnerjob
+      - cloudjob
