@@ -3,10 +3,10 @@ version: 2.1
 jobs:
   hello-job:
     docker:
-      - image: cimg/ruby:3.2.2 # the primary container, where your job's commands are run
+      - image: cimg/ruby:3.0.6-node # the primary container, where your job's commands are run
     steps:
       - checkout # check out the code in the project directory
-      - run: ech "hello world test delay 12:29 PM MST" # run the `echo` command
+      - run: echo "hello world" # run the `echo` command
 
 workflows:
   my-workflow:
