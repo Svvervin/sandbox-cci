@@ -11,12 +11,19 @@ jobs:
   build:
     macos:
       xcode: <<pipeline.parameters.xcode_version>>
-    resource_class: macos.m1.large.gen1
+    resource_class: macos.m1.medium.gen1
     parallelism: 10
     
     steps:
       - run: xcodebuild -version
       - run: brew --version
+      - run:
+          command: |
+            while true; do
+              sleep5
+              sudo powermetrics --samplers gpu_power -i500 -n1 --show-usage-summary
+            done
+  background: true
       - run:
           command: |
             export SIMULATOR_UDID=$(xcrun simctl create testsim "iPhone 11" "iOS15.5")
