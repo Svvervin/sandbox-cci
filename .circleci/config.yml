@@ -11,7 +11,7 @@ jobs:
   build:
     macos:
       xcode: <<pipeline.parameters.xcode_version>>
-    resource_class: macos.m1.medium.gen1
+    resource_class: macos.m1.large.gen1
     parallelism: 10
     
     steps:
