@@ -12,6 +12,7 @@ jobs:
       # with Xcode 12.5.1 installed
       - run: xcodebuild -version
       - run: brew --version
+      - run: echo "hello world"
 
   cloudjob:
     docker:
