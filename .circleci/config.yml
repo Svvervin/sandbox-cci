@@ -5,7 +5,7 @@ version: 2.1
 jobs:
   runnerjob:
     machine: true
-    resource_class: runner-egrapp/support-demo
+    resource_class: ervin/support-demo
     
     steps:
       # Commands will execute in macOS container
