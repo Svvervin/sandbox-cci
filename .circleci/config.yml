@@ -19,14 +19,7 @@ jobs:
       - run: brew --version
       - run:
           command: |
-            while true; do
-              sleep 5
-              sudo powermetrics --samplers gpu_power -i500 -n1 --show-usage-summary
-            done
-          background: true
-      - run:
-          command: |
-            export SIMULATOR_UDID=$(xcrun simctl create testsim "iPhone 11" "iOS15.5")
+            export SIMULATOR_UDID=$(xcrun simctl create testsim "iPhone 11" "iOS17")
             xcrun simctl boot $SIMULATOR_UDID
             xcrun simctl bootstatus $SIMULATOR_UDID
       
