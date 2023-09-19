@@ -17,7 +17,7 @@ jobs:
       - image: cimg/base:current
     steps:
         - checkout
-        - cli/install
+        - circleci-cli/install
         - run: circleci version
         - run: circleci orb list --host cciserver.logangodsey.com --token $CIRCLE_TOKEN
 
