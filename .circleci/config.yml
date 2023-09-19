@@ -5,6 +5,18 @@ orbs:
   circleci-cli: circleci/circleci-cli@0.1.9
 
 jobs:
+  use-executor:
+    executor: cli/default
+    steps:
+      - run: echo "this job is using the orb's default executor"
+      
+  use-install-command:
+    docker:
+      - image: circleci/circleci-cli:latest
+    steps:
+      - cli/install
+      - run: echo "the CLI is now installed"
+  
   say-hello:
     docker:
       - image: cimg/base:current
@@ -17,5 +29,7 @@ jobs:
 workflows:
   say-hello-workflow:
     jobs:
+      - use-executor
+      - use-install-command
       - say-hello
 
