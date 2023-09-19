@@ -12,7 +12,7 @@ jobs:
       - cli/install
       - run: echo "the CLI is now installed"
   
-  say-hello:
+  check-orbs:
     docker:
       - image: cimg/base:current
     steps:
@@ -25,5 +25,5 @@ workflows:
   say-hello-workflow:
     jobs:
       - use-install-command
-      - say-hello
+      - check-orbs
 
