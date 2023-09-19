@@ -15,7 +15,6 @@ jobs:
           shell: powershell.exe
           command: |
             docker info
-            docker pull mcr.microsoft.com/mssql/server:2019-latest
-            docker run mcr.microsoft.com/mssql/server:2019-latest
+            docker pull mcr.microsoft.com/windows/servercore:ltsc2019
             docker run mcr.microsoft.com/windows/servercore:ltsc2019 cmd /c ping www.microsoft.com
 
