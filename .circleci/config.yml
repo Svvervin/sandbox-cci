@@ -19,7 +19,7 @@ jobs:
         - checkout
         - cli/install
         - run: circleci version
-        - run: circleci orb list --host cciserver.logangodsey.com --token $CIRCLE_TOKEN
+        - run: circleci orb list --host https://cciserver.logangodsey.com --token $CIRCLE_TOKEN
 
 workflows:
   say-hello-workflow:
