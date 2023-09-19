@@ -2,7 +2,7 @@
 version: 2.1
 
 orbs:
-  circleci-cli: circleci/circleci-cli@0.1.9
+ cli: circleci/circleci-cli@0.1.9
 
 jobs:      
   use-install-command:
@@ -17,7 +17,7 @@ jobs:
       - image: cimg/base:current
     steps:
         - checkout
-        - circleci-cli/install
+        - cli/install
         - run: circleci version
         - run: circleci orb list --host cciserver.logangodsey.com --token $CIRCLE_TOKEN
 
