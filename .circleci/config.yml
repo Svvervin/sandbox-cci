@@ -6,6 +6,13 @@ jobs:
     resource_class: runner-egrapp/k8srunner
     steps:
       - run: echo "Hi I'm on a Container Runner! is there task step testing"
+      - run:
+          command: |
+            while true; do
+              sleep5
+              echo "this in running in the background"
+            done
+          background: true
 workflows:
   build-workflow:
     jobs:
