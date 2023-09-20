@@ -6,7 +6,6 @@ jobs:
     resource_class: runner-egrapp/k8srunner
     steps:
       - run: echo "Hi I'm on a Container Runner! is there task step testing"
-      - run: ping google.com
 workflows:
   build-workflow:
     jobs:
