@@ -11,17 +11,13 @@ jobs:
   build:
     macos:
       xcode: <<pipeline.parameters.xcode_version>>
-    resource_class: macos.m1.medium.gen1
-    parallelism: 10
+
+    # parallelism: 10
     
     steps:
       - run: xcodebuild -version
       - run: brew --version
-      - run:
-          command: |
-            export SIMULATOR_UDID=$(xcrun simctl create testsim "iPhone 11" "iOS17")
-            xcrun simctl boot $SIMULATOR_UDID
-            xcrun simctl bootstatus $SIMULATOR_UDID
+
       
       
 workflows:
