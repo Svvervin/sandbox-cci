@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: cimg/base:current
-    resource_class: runner-egrapp/k8srunner
+    resource_class: e-grapp/rotate-test
     steps:
       - run: echo "Hi I'm on a Container Runner! is there task step testing"
       - run:
