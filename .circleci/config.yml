@@ -5,7 +5,7 @@ jobs:
       - image: cimg/base:current
     resource_class: e-grapp/rotate-test
     steps:
-      - run: echo "Hi I'm on a Container Runner! is there task step testing"
+      - run: echo "Hi I'm on a Container Runner ! is there task step testing"
       - run:
           command: |
             while true; do
