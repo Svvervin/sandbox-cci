@@ -3,18 +3,7 @@ version: 2.1
 jobs:
   build:
     machine:
-      image: 'windows-server-2019-vs2019:2023.08.1'
-      resource_class: 'windows.medium'
-      shell: powershell.exe -ExecutionPolicy Bypass
-      
+      image: windows-server-2022-gui:current
+    resource_class: windows.medium
     steps:
-      - checkout
-      - run: systeminfo
-      - run:
-          name: "Check docker"
-          shell: powershell.exe
-          command: |
-            docker info
-            docker pull mcr.microsoft.com/windows/servercore:ltsc2019
-            docker run mcr.microsoft.com/windows/servercore:ltsc2019 cmd /c ping www.microsoft.com
-
+      - run: docker run --rm  mcr.microsoft.com/windows/servercore:ltsc2022 powershell.exe Invoke-RestMethod https://example.com/
