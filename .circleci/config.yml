@@ -1,23 +1,24 @@
-# Use the latest 2.1 version of CircleCI pipeline process engine.
-# See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
-parameters:
-  xcode_version:
-    type: string
-    default: 15.0.0
+orbs:
+  macos: circleci/macos@2.4.0
   
 jobs:
   build:
     macos:
-      xcode: <<pipeline.parameters.xcode_version>>
-
-    # parallelism: 10
+      xcode: 14.3.1
+    resource_class: macos.m1.medium.gen1
     
     steps:
       - run: xcodebuild -version
       - run: brew --version
-
+      - macos/preboot-simulator
+      - run:
+          command: |
+            export SIMULATOR_UDID=$(xcrun simctl create testsim "iPhone 11" "iOS15.5")
+            xcrun simctl boot $SIMULATOR_UDID
+            xcrun simctl bootstatus $SIMULATOR_UDID
+      - run: echo $MACOS_ORB_DEVICE_UDID
       
       
 workflows:
