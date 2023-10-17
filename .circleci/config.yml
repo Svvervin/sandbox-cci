@@ -13,8 +13,10 @@ jobs:
       - run: xcodebuild -version
       - run: brew --version
       - macos/add-uitest-permissions
-      - macos/preboot-simulator
-          device: "iPhone 15"
+      - macos/preboot-simulator:
+          version: "17.0"
+          platform: "iOS"
+          device: "iPhone 15 Pro"
       - run:
           command: |
             export SIMULATOR_UDID=$(xcrun simctl create testsim "iPhone 11" "iOS15.5")
