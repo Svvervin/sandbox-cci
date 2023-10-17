@@ -6,13 +6,14 @@ orbs:
 jobs:
   build:
     macos:
-      xcode: 15.0.1
+      xcode: 15.0.0
     resource_class: macos.m1.medium.gen1
     
     steps:
       - run: xcodebuild -version
       - run: brew --version
-      - macos/preboot-paired-simulator
+      - macos/add-uitest-permissions
+      - macos/preboot-simulator
       - run:
           command: |
             export SIMULATOR_UDID=$(xcrun simctl create testsim "iPhone 11" "iOS15.5")
