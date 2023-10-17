@@ -17,11 +17,6 @@ jobs:
           version: "17.0"
           platform: "iOS"
           device: "iPhone 15 Pro"
-      - run:
-          command: |
-            export SIMULATOR_UDID=$(xcrun simctl create testsim "iPhone 11" "iOS15.5")
-            xcrun simctl boot $SIMULATOR_UDID
-            xcrun simctl bootstatus $SIMULATOR_UDID
       - run: echo $MACOS_ORB_DEVICE_UDID
       
       
