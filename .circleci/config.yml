@@ -20,7 +20,7 @@ jobs:
             screenresolution list
       - run: brew tap jakehilborn/jakehilborn && brew install displayplacer
       - run: displayplacer list
-      - run: displayplacer "id:1 res:1920x1080 hz:60 color_depth:32 origin:(0,0) degree:0"
+      - run: displayplacer "id:1 res:1920x1080 hz:60 origin:(0,0) degree:0"
      # - run: screenresolution set 1920x1080x32
       
       
