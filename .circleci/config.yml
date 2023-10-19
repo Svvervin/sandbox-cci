@@ -18,7 +18,7 @@ jobs:
             brew install screenresolution
             screenresolution get
             screenresolution list
-      - run: brew install displayplacer
+      - run: brew tap jakehilborn/jakehilborn && brew install displayplacer
       - run: displayplacer list
      # - run: screenresolution set 1920x1080x32
       
