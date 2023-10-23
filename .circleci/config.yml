@@ -1,24 +1,16 @@
 version: 2.1
-
+    
 jobs:
-  update:
-    parameters:
-      img:
-        type: string
+  my-job:
     docker:
-      - image: << parameters.img >>
+    - image: cimg/python:3.10
+    resource_class: small
+    
     steps:
-     
-      # - run: sed -i 's/stable\/updates/stable-security\/updates/' /etc/apt/sources.list
-      # - run: echo "deb http://archive.debian.org/debian stretch main" | sudo tee -a /etc/apt/sources.list
-      - run: sudo apt-get update
+      - run: |
+          circleci version
 
 workflows:
-  aptgetupdate:
+  le-workfw5:
     jobs:
-      - update:
-          matrix:
-            parameters:
-              img:
-                - circleci/node:14.8.0
-                - cimg/node:14.8.0
+      - my-job
