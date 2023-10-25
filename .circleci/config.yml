@@ -1,10 +1,20 @@
 version: 2.1
 
+workflows:
+  build-and-unittest:
+    jobs:
+      - build-windows
+
 jobs:
-  build:
+  build-windows:
     machine:
-      image: windows-server-2022-gui:current
-    resource_class: windows.medium
+      #image: windows-server-2019-cuda:current
+      # image: windows-server-2019-vs2019:current
+      image: windows-server-2022-gui:edge
+      #resource_class: windows.gpu.nvidia.medium
+      resource_class: windows.medium
+      shell: powershell.exe -ExecutionPolicy Bypass
+      #docker_layer_caching: true
     steps:
       - run:
           name: set env var
