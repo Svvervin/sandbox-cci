@@ -21,7 +21,8 @@ jobs:
           command: |
             setx TEST VALUE /M
             refreshenv
-          shell: cmd.exe
+          shell: powershell.exe
       - run:
           name: get env var
           command: Get-ItemPropertyValue 'registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' TEST
+          shell: powershell.exe
