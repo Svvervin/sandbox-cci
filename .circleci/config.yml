@@ -6,4 +6,12 @@ jobs:
       image: windows-server-2022-gui:current
     resource_class: windows.medium
     steps:
-      - run: docker run --rm  mcr.microsoft.com/windows/servercore:ltsc2022 powershell.exe Invoke-RestMethod https://example.com/
+      - run:
+          name: set env var
+          command: |
+            setx TEST VALUE /M
+            refreshenv
+          shell: cmd.exe
+      - run:
+          name: get env var
+          command: Get-ItemPropertyValue 'registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' TEST
