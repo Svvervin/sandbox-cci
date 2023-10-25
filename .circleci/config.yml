@@ -12,7 +12,7 @@ jobs:
     steps:
       - run: xcodebuild -version
       - run: brew --version
-      - run: sudo chown -R user:circleci /opt
+      - run: sudo chown -R circleci: /opt
       
       
 workflows:
