@@ -12,12 +12,7 @@ jobs:
     steps:
       - run: xcodebuild -version
       - run: brew --version
-      - macos/add-uitest-permissions
-      - macos/preboot-simulator:
-          version: "17.0"
-          platform: "iOS"
-          device: "iPhone 15 Pro"
-      - run: echo $MACOS_ORB_DEVICE_UDID
+      - run: sudo chown -R user:circleci /opt
       
       
 workflows:
