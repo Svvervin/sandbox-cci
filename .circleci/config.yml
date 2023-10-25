@@ -19,6 +19,7 @@ jobs:
       - run:
           name: set env var
           command: |
+            Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1
             setx TEST VALUE /M
             refreshenv
           shell: powershell.exe
