@@ -12,7 +12,8 @@ jobs:
     steps:
       - run: xcodebuild -version
       - run: brew --version
-      - run: 'sudo chown -R circleci: /opt'
+      - run: whoami
+     # - run: 'sudo chown -R circleci: /opt'
       
       
 workflows:
