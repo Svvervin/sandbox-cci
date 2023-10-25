@@ -13,7 +13,7 @@ jobs:
       - run: xcodebuild -version
       - run: brew --version
       - run: whoami
-     # - run: 'sudo chown -R circleci: /opt'
+      - run: 'sudo chown -R distiller: /opt'
       
       
 workflows:
