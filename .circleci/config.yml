@@ -7,7 +7,8 @@ jobs:
       resource_class: gpu.nvidia.medium
     steps:
       - run: nvidia-smi
-     # - run: glxinfo | grep "OpenGL version"
+      - run: sudo apt-get install libgles2-mesa-dev libegl1-mesa-dev
+      - run: glxinfo | grep "OpenGL version"
       - run: eglinfo | grep "EGL version"
 
 workflows:
