@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   hello-job:
     docker:
-      - image: cimg/postgres:16.0.0-postgis # the primary container, where your job's commands are run
+      - image: cimg/postgres:15.2-postgis # the primary container, where your job's commands are run
     steps:
       - checkout # check out the code in the project directory
       - run: echo "hello world" # run the `echo` command
