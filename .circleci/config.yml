@@ -1,21 +1,15 @@
 version: 2.1
 
-
 jobs:
-    say-hello:
-      docker:
-      - image: cimg/postgres:16.0.0-postgis
-      resource_class: medium+
+  hello-job:
+    docker:
+      - image: cimg/postgres:16.0.0-postgis # the primary container, where your job's commands are run
     steps:
-      - checkout
-      - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+      - checkout # check out the code in the project directory
+      - run: echo "hello world" # run the `echo` command
       - run: sudo apt install postgresql-15-pgvector
 
- 
 workflows:
-  say-hello-workflow:
+  my-workflow:
     jobs:
-      - say-hello
-     
+      - hello-job
