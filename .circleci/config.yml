@@ -10,7 +10,9 @@ jobs:
     steps:
       # Commands will execute in macOS container
       # with Xcode 12.5.1 installed
-      - run: xcodebuild -version
+      - run:
+          shell: shell: /bin/sh
+          command: xcodebuild -version
       - run: brew --version
       - run: echo "hello world"
 
