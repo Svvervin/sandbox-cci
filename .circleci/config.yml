@@ -7,7 +7,12 @@ jobs:
     steps:
       - checkout # check out the code in the project directory
       - run: echo "hello world" # run the `echo` command
-      - run: sudo apt install postgresql-15-pgvector
+      - run: |
+          cd /tmp
+          git clone --branch v0.5.1 https://github.com/pgvector/pgvector.git
+          cd pgvector
+          make
+          make install # may need sudo
 
 workflows:
   my-workflow:
