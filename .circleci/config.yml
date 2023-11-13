@@ -13,7 +13,11 @@ jobs:
           cd pgvector
           make
           make install # may need sudo
-      - run: CREATE EXTENSION vector;
+      - run: |
+          psql \
+          -d $TEST_DATABASE_URL \
+          -c "CREATE TABLE test (name char(25));"
+          CREATE EXTENSION vector;
 
 workflows:
   my-workflow:
