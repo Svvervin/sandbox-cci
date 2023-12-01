@@ -2,11 +2,10 @@ version: 2.1
 
 jobs:
   who-me:
-    machine:
-      image: ubuntu-2204:2022.10.1
+    docker:
+      - image: google/cloud-sdk:359.0.0
     steps:
-      - run: docker run singledigital/awx-ee:4.x whoami
-      - run: timeout 2m ping -w5 google.com
+      - run: jq --version
 
 workflows:
   docker-who:
