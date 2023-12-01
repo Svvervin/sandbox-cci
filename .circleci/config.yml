@@ -5,7 +5,7 @@ jobs:
     docker:
       - image: google/cloud-sdk:359.0.0
     steps:
-      - run: sudo apt-get install jq
+      - run: apt install jq
       - run: jq --version
 
 workflows:
