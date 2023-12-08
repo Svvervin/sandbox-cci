@@ -1,24 +1,15 @@
 version: 2.1
-orbs:
-  node: circleci/node@5.1.0
+
 jobs:
-  tests:
-    circleci_ip_ranges: true
-    executor:
-      name: node/default
+  hello-job:
+    docker:
+      - image: cimg/node:18.17.1 # the primary container, where your job's commands are run
     steps:
-      - checkout
-      - run: sudo npm install -g npm@latest
-      # - node/install-packages:
-      #     override-ci-command: npm install
-      - run: 
-          name: Run Tests
-          command: | 
-            # npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
-            # npm set registry https://stitchfix01.jfrog.io/artifactory/api/npm/algo-npm/
-            npm install
-            npm run test
+      - checkout # check out the code in the project directory
+      - run: echo "hello world" # run the `echo` command
+      - run: circleci version
+
 workflows:
-  Jest Test Runner:
+  my-workflow:
     jobs:
-      - tests
+      - hello-job
