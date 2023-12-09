@@ -37,7 +37,7 @@ jobs:
           command: |
               echo "Hello, World"
 
-my_m1_job:
+my_m1_joblarge:
     executor: macos-m1-15_2
     steps:
       #- jq/install
@@ -52,3 +52,4 @@ workflows:
     jobs:
       - my_intel_job
       - my_m1_job
+      - my_m1_joblarge
