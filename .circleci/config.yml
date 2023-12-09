@@ -5,6 +5,10 @@ executors:
     macos:
       xcode: 15.1.0
     resource_class: macos.m1.medium.gen1
+  macos-m1-15_2:
+    macos:
+      xcode: 15.1.0
+    resource_class: macos.m1.large.gen1  
   macos-intel-15_1:
     macos:
       xcode: 15.1.0
@@ -32,6 +36,16 @@ jobs:
           name: "Basic command"
           command: |
               echo "Hello, World"
+
+my_m1_job:
+    executor: macos-m1-15_2
+    steps:
+      #- jq/install
+      - run: 
+          name: "Basic command"
+          command: |
+              echo "Hello, World"
+    
 
 workflows:
   the_best_workflow:
