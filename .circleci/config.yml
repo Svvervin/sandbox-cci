@@ -36,6 +36,7 @@ jobs:
           command: |
             which helm
             helm version
+  macaroni:
     macos:
       xcode: 15.1.0
     steps:
@@ -53,4 +54,5 @@ workflows:
     jobs:
       - win
       - ubnt
+      - macaroni
       
