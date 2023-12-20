@@ -40,11 +40,11 @@ jobs:
       xcode: 15.1.0
     steps:
       - run: brew install helm
-       - run:
-            name: inspect Helm
-            command: |
-              which helm
-              helm version
+      - run:
+          name: inspect Helm
+          command: |
+            which helm
+            helm version
       
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
