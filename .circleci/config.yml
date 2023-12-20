@@ -1,11 +1,10 @@
-# Use the latest 2.1 version of CircleCI pipeline process engine.
-# See: https://circleci.com/docs/configuration-reference
+
 version: 2.1
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
 jobs:
-  say-hello:
+  win:
     # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/configuration-reference/#executor-job
    resource_class: 'windows.medium'
@@ -16,9 +15,23 @@ jobs:
       # Commands are run in a Windows virtual machine environment
         - checkout
         - run: Write-Hos 'Hello, Windows'
+        - run: choco install kubernetes-helm
+  ubnt:
+    machine:
+      image: ubuntu-2004:current
+    resource_class: large
+    steps:
+      - run: |
+              curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg > /dev/null
+              sudo apt-get install apt-transport-https --yes
+              echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.gpg] https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+              sudo apt-get update
+              sudo apt-get install helm
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
 workflows:
   say-hello-workflow:
     jobs:
-      - say-hello
+      - win
+      - ubnt
+      
