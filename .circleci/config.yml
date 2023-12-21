@@ -9,7 +9,7 @@ jobs:
       - run :
           name : test
           command : |
-            echo "hellooo world" 
+            echo "helloooo world" 
    
 
   test:
