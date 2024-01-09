@@ -1,12 +1,12 @@
 version: 2.1
 
 orbs:
-  macos: circleci/macos@2.4.0
+  macos: circleci/macos@2.4.1
   
 jobs:
   build:
     macos:
-      xcode: 14.3.1
+      xcode: 15.2.0
     resource_class: macos.m1.medium.gen1
     
     steps:
