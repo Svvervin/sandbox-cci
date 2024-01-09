@@ -12,7 +12,7 @@ jobs:
     steps:
       - run: xcodebuild -version
       - run: brew --version
-      - mac/enable-vnc:
+      - macos/enable-vnc:
           #username: vncuser
           #password: password123
       
