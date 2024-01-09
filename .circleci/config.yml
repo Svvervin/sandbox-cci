@@ -12,10 +12,8 @@ jobs:
     steps:
       - run: xcodebuild -version
       - run: brew --version
-      - macos/enable-vnc:
-          #username: vncuser
-          #password: password123
-      
+      - macos/enable-vnc
+    
       
 workflows:
   say-hello-workflow:
