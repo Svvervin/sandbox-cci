@@ -7,7 +7,7 @@ jobs:
   build:
     macos:
       xcode: 15.2.0
-    resource_class: macos.m2.medium.gen1
+    resource_class: macos.m2.medium.gen2
     
     steps:
       - run: xcodebuild -version
