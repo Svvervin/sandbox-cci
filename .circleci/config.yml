@@ -14,7 +14,9 @@ jobs:
       - run: brew --version
       - run: whoami
       - run: 'sudo chown -R distiller: /opt'
-      - run: softwareupdate --install-rosetta --agree-to-license
+      - run: 
+          name: Install Rosetta translation environment on Apple Silicon Mac
+          command: softwareupdate --install-rosetta --agree-to-license
       
       
 workflows:
