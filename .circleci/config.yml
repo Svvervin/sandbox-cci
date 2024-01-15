@@ -7,13 +7,14 @@ jobs:
   build:
     macos:
       xcode: 15.2.0
-    resource_class: macos.m2.medium.gen2
+    resource_class: macos.m1.medium.gen1
     
     steps:
       - run: xcodebuild -version
       - run: brew --version
       - run: whoami
       - run: 'sudo chown -R distiller: /opt'
+      - run: softwareupdate --install-rosetta --agree-to-license
       
       
 workflows:
