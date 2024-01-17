@@ -13,12 +13,12 @@ jobs:
       - run: xcodebuild -version
       - run: brew --version
       - run:
-        command: |
-          while true; do
-            sleep 600
-            echo "this in running in the background"
-          done
-        background: true
+          command: |
+            while true; do
+              sleep 600
+              echo "this in running in the background"
+            done
+          background: true
       - macos/enable-vnc
       
     
