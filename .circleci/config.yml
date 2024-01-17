@@ -7,7 +7,7 @@ jobs:
   build:
     macos:
       xcode: 14.3.1
-    resource_class: macos.m1.medium.gen1
+    resource_class: https://circleci.com/docs/using-macos/#available-resource-classes
     
     steps:
       - run: xcodebuild -version
