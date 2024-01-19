@@ -3,13 +3,13 @@ version: 2.1
 jobs:
   build:
     machine:
-      image: linux-cuda-12:default
-      resource_class: gpu.nvidia.medium
+      image: linux-cuda-11:edge
+      resource_class: gpu.nvidia.small
     steps:
       - run: nvidia-smi
-      - run: sudo apt-get install libgles2-mesa-dev libegl1-mesa-dev
-      # - run: glxinfo | grep "OpenGL version"
-      - run: eglinfo | grep "EGL version"
+      #- run: sudo apt-get install libgles2-mesa-dev libegl1-mesa-dev
+      #- run: glxinfo | grep "OpenGL version"
+      #- run: eglinfo | grep "EGL version"
 
 workflows:
   my-workflow:
