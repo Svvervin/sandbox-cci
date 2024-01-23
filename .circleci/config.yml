@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   machine-job:
     machine:
-      image: default
+      image: ubuntu-2204:2023.10.1
     steps:
       - checkout 
       - run: echo "hello world"
