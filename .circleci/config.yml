@@ -3,10 +3,11 @@ version: 2.1
 jobs:
   machine-job:
     machine:
-      image: ubuntu-2204:2023.10.1
+      image: default
     steps:
       - checkout 
       - run: echo "hello world"
+      - run: pwd
 
 workflows:
   my-workflow:
