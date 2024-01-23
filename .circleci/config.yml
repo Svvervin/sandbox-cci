@@ -7,18 +7,14 @@ jobs:
   build:
     macos:
       xcode: 14.3.1
-    resource_class: macos.m1.medium.gen1
+    resource_class: macos.x86.medium.gen2
     
     steps:
       - run: xcodebuild -version
       - run: brew --version
       - run:
           command: |
-            while true; do
-              sleep 600
-              echo "this in running in the background"
-            done
-          background: true
+            sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -activate -configure -access -off -restart -agent -privs -all -allowAccessFor -allUsers
       - macos/enable-vnc
       
     
