@@ -11,7 +11,19 @@ jobs:
       - run:
           name: install sdk
           command: |
-           sudo apt update && sudo apt install android-sdk
+           wget https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+           mkdir android
+           cd android
+           mv ~/commandlinetools-mac-6858069_latest.zip ./
+           unzip commandlinetools-mac-6858069_latest.zip
+           rm commandlinetools-mac-6858069_latest.zip
+           cd cmdline-tools
+           mkdir tools
+           mv -i * tools
+           export ANDROID_HOME=$HOME/android
+           export PATH=$ANDROID_HOME/cmdline-tools/tools/bin/:$PATH
+           export PATH=$ANDROID_HOME/emulator/:$PATH
+           export PATH=$ANDROID_HOME/platform-tools/:$PATH
       - run: sdkmanager --list
 workflows:
   build:
