@@ -3,15 +3,25 @@ version: 2.1
 jobs:
   my-job:
     docker:
-    - image: cimg/base:current-22.04
+    - image: cimg/openjdk:21.0.0
     resource_class: small
     
     steps:
-      - checkout:          
+      - checkout          
       - run: |
-          circleci version
+          ssh -v
+  my-job-2:
+    docker:
+    - image: cimg/base:stable
+    resource_class: small
+    
+    steps:
+      - checkout          
+      - run: |
+          ssh -v
 
 workflows:
   le-workfw5:
     jobs:
       - my-job
+      - my-job-2
