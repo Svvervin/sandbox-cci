@@ -9,7 +9,7 @@ jobs:
     steps:
       - checkout          
       - run: |
-          ssh -v
+          ssh -V
   my-job-2:
     docker:
     - image: cimg/base:stable
@@ -18,7 +18,7 @@ jobs:
     steps:
       - checkout          
       - run: |
-          ssh -v
+          ssh -V
 
 workflows:
   le-workfw5:
