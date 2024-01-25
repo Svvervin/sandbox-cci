@@ -12,7 +12,7 @@ jobs:
           ssh -V
       - run: sudo apt update
       - run: sudo apt upgrade openssh-client
-      - run: service sshd restart
+      - run: sudo systemctl restart ssh
       - run: ssh -V
   my-job-2:
     docker:
