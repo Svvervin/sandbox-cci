@@ -8,15 +8,10 @@ jobs:
     
     steps:
       - checkout          
-      - run: |
-          ssh -V
-      - run: sudo apt update
-      - run: sudo apt upgrade openssh-client
-      - run: sudo systemctl restart ssh
       - run: ssh -V
   my-job-2:
     docker:
-    - image: cimg/base:stable
+    - image: cimg/base:current
     resource_class: small
     
     steps:
