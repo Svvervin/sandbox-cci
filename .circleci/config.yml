@@ -9,18 +9,10 @@ jobs:
     steps:
       - checkout          
       - run: ssh -V
-  my-job-2:
-    docker:
-    - image: cimg/base:current
-    resource_class: small
-    
-    steps:
-      - checkout          
-      - run: |
-          ssh -V
+      - run: Write-Host 'Hello, this is gonna fail because not Windows'
 
 workflows:
   le-workfw5:
     jobs:
       - my-job
-      - my-job-2
+
