@@ -9,11 +9,9 @@ jobs:
       - run: xcodebuild -version
       - run: brew --version
       - run: whoami
-      - run: 'sudo chown -R distiller: /opt'
-      - run: 
-          name: Install Rosetta translation environment on Apple Silicon Mac
-          command: softwareupdate --install-rosetta --agree-to-license
-    
+      - run:
+          name: Check Metal device
+          command: swift check_metal_device.swift
     resource_class: macos.m1.medium.gen1
     macos:
       xcode: 15.2.0
