@@ -6,6 +6,7 @@ version: 2.1
 jobs:
   build:   
     steps:
+      - checkout
       - run: xcodebuild -version
       - run: brew --version
       - run: whoami
