@@ -11,7 +11,7 @@ jobs:
     
     steps:
       - checkout
-      - cli/install
+      - circleci-cli/install
       - run: circleci version
       - run: circleci config validate
 
