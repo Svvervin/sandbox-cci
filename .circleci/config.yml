@@ -8,8 +8,8 @@ jobs:
     
     steps:
       - checkout          
-      - run: ssh -V
-      - run: Write-Host 'Hello, this is gonna fail because not Windows'
+      - run: circleci version
+      - run: circleci config validate
 
 workflows:
   le-workfw5:
