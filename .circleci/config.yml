@@ -13,4 +13,4 @@ jobs:
 workflows:
   say-hello-workflow:
     jobs:
-      - arm-example
+      - arm_example
