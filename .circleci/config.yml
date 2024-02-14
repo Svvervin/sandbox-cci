@@ -11,10 +11,7 @@ jobs:
     
     steps:
       - checkout
-      - run:
-          name: Generate template
-          command: |
-            ruby make-gem ci-test
+      - run: pwd
       - circleci-cli/install
       - run: circleci version
       - run:
