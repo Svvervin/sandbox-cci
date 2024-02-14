@@ -6,11 +6,15 @@ orbs:
 jobs:
   my-job:
     docker:
-    - image: cimg/openjdk:8.0
+    - image: cimg/ruby:3.1
     resource_class: small
     
     steps:
       - checkout
+      - run:
+          name: Generate template
+          command: |
+            ruby make-gem ci-test
       - circleci-cli/install
       - run: circleci version
       - run:
