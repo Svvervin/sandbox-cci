@@ -20,8 +20,7 @@ jobs:
           command: |
             circleci version
             cd ci-test
-            circleci config validate --org-slug=gh/e-grapp --token=$CIRCLE_TOKEN
-
+            circleci config validate --org-slug=gh/e-grapp --token=$CIRCLECI_CLI_TOKEN
 workflows:
   le-workfw5:
     jobs:
