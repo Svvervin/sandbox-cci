@@ -13,7 +13,6 @@ jobs:
       - checkout
       - run: pwd
       - circleci-cli/install
-      - circleci-cli/setup
       - run: circleci version
       - run:
           name: Validate generated CircleCI config
