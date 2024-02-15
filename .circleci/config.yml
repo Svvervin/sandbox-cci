@@ -19,7 +19,7 @@ jobs:
           command: |
             circleci version
             cd ci-test
-            circleci config validate --token=$CIRCLECI_CLI_TOKEN
+            circleci config validate
 workflows:
   le-workfw5:
     jobs:
