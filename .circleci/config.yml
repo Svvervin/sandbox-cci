@@ -4,7 +4,7 @@ jobs:
   build: # name of your job
     machine:
       image: 'windows-server-2022-gui:current'
-    resource_class: e-grapp/windows-runner # can be medium, large, xlarge, 2xlarge
+    resource_class: windows.medium # can be medium, large, xlarge, 2xlarge
     steps:
       # Commands are run in a Windows virtual machine environment
       - run:
