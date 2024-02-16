@@ -10,7 +10,8 @@ jobs:
       - run: echo "hi"
       - run:
           name: get token
-          command: echo 'export ROLLBAR_ACCESS_TOKEN=$(yq -r ".ROLLBAR_ACCESS_TOKEN" ~/config/env.yaml)' >> $BASH_ENV
+          command: echo 'export ROLLBAR_ACCESS_TOKEN=$(yq -r ".ROLLBAR_ACCESS_TOKEN" /home/circleci/project
+config/env.yaml)' >> $BASH_ENV
       - run: echo $ROLLBAR_ACCESS_TOKEN
 
 workflows:
