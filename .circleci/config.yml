@@ -19,7 +19,7 @@ jobs:
         - checkout
         - run: sudo apt-get update
         - browser-tools/install-chrome:
-            chrome-version: 122.0.6261.39
+            chrome-version: 120.0.6099.224
             replace-existing: true
         - browser-tools/install-chromedriver
 # Orchestrate jobs using workflows
