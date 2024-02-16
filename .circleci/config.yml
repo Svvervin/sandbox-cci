@@ -3,7 +3,7 @@
 version: 2.1
 
 orbs:
-  browser-tools: circleci/browser-tools@1.4.4
+  browser-tools: circleci/browser-tools@1.4.6
 
 
 # Define a job to be invoked later in a workflow.
@@ -19,7 +19,7 @@ jobs:
         - checkout
         - run: sudo apt-get update
         - browser-tools/install-chrome:
-            chrome-version: 116.0.5845.96
+            chrome-version: 121.0.6167.184
             replace-existing: true
         - browser-tools/install-chromedriver
 # Orchestrate jobs using workflows
