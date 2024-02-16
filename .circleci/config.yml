@@ -1,19 +1,17 @@
 version: 2.1
 
-orbs:
-  circleci-cli: circleci/circleci-cli@0.1.9
   
 jobs:
   my-job:
     docker:
-    - image: cimg/openjdk:8.0
+    - image: cimg/base:2024.01
+      auth:
+        username: fake-user-123  # can specify string literal values
+        password: password123  # or project environment variable reference
     resource_class: small
     
     steps:
       - checkout
-      - circleci-cli/install
-      - run: circleci version
-      - run: circleci config validate
 
 workflows:
   le-workfw5:
