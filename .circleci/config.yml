@@ -2,14 +2,14 @@ version: 2.1
 
 jobs:
   build:
-    machine:
-      image: ubuntu-2204:2024.01.1
+    docker:
+      - image: cimg/node:18.13.0
     steps:
       - checkout
       - run: pwd
-      - run: sudo apt install tree
-      - run: tree
       - run: echo "hi"
+      - run: ls -lah /home/circleci/project/config/*
+      - run: ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
       - run:
           name: get token
           command: echo 'export ROLLBAR_ACCESS_TOKEN=$(yq -r ".ROLLBAR_ACCESS_TOKEN" /home/circleci/project/config/env.yaml)' >> $BASH_ENV
