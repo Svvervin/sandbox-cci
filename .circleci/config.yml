@@ -3,7 +3,7 @@
 version: 2.1
 
 orbs:
-  browser-tools: circleci/browser-tools@1.4.7
+  browser-tools: circleci/browser-tools@1.4.6
 
 
 # Define a job to be invoked later in a workflow.
