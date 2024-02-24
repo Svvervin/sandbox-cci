@@ -8,9 +8,10 @@ jobs:
       - checkout
       - run: pwd
       - run: echo "hi"
+      - run: echo $CIRCLE_WORKING_DIRECTORY
       - run:
           name: get token
-          command: echo 'export ROLLBAR_ACCESS_TOKEN=$(yq -r ".ROLLBAR_ACCESS_TOKEN" /home/circleci/project/config/env.yaml)' >> $BASH_ENV
+          command: echo 'export ROLLBAR_ACCESS_TOKEN=$(yq -r ".ROLLBAR_ACCESS_TOKEN" $CIRCLE_WORKING_DIRECTORY/config/env.yaml)' >> $BASH_ENV
       - run: echo $ROLLBAR_ACCESS_TOKEN
 
 workflows:
