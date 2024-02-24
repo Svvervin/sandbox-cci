@@ -8,6 +8,9 @@ jobs:
       - checkout
       - run: pwd
       - run: echo "hi"
+      - run:  
+           name: "Fix CIRCLE_WORKING_DIRECTORY"  
+           command: echo 'CIRCLE_WORKING_DIRECTORY="${CIRCLE_WORKING_DIRECTORY/#\~/$HOME}"' >> $BASH_ENV
       - run: echo $CIRCLE_WORKING_DIRECTORY
       - run:
           name: get token
