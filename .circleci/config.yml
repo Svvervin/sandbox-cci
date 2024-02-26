@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/cimg/base:current
+      - image: cimg/base:current
       
     steps:
       - run :
