@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - run: pwd
-      - run: echo "hi"
+      - run: echo "hi "
       - run: ls -lah /home/circleci/project/config/*
       - run: find . | sed -e "s/[^-][^\/]*\//  |/g" -e "s/|\([^ ]\)/|-\1/"
       - run:
