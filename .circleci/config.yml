@@ -12,7 +12,7 @@ jobs:
       steps:
         # Commands are run in a Windows virtual machine environment
           - checkout
-          - run: echo "ayo wheres the  gabagool"
+          - run: echo "ayo wheres the gabagool"
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
 workflows:
