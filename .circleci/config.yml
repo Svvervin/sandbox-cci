@@ -16,9 +16,7 @@ jobs:
       - run: brew --version
       - run: whoami
       - python/dist
-      - run:
-          command: |
-            poetry run pytest --version
+      - run: pip install twine && twine upload dist/*
       - run: pip --version
       
       
