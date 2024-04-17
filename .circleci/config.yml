@@ -14,8 +14,7 @@ jobs:
       - run: xcodebuild -version
       - run: brew --version
       - run: whoami
-      - python/install-packages:
-          pkg-manager: poetry
+      - python/dist
       - run:
           command: |
             poetry run pytest --version
