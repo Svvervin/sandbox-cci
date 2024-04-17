@@ -11,6 +11,7 @@ jobs:
     resource_class: macos.m1.medium.gen1
     
     steps:
+      - checkout
       - run: xcodebuild -version
       - run: brew --version
       - run: whoami
